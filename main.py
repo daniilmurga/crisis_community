@@ -15,6 +15,7 @@ from db import add_message
 from db import init_db
 
 import texts
+import texts_for_images
 
 TG_TOKEN = "1093939269:AAGzonjRzrCK1VAgGCEQxyV-Q_AMaiobAOM"
 
@@ -62,7 +63,6 @@ def get_keyboard_2():
 def callback_handler(update: Update, context: CallbackContext):
     callback_data = update.callback_query.data
     user = update.effective_user
-    print(user.id)
 
     if callback_data == CALLBACK_BUTTON_1:
         update.effective_message.reply_text(
@@ -104,25 +104,37 @@ def message_handler(update: Update, context: CallbackContext):
         )
 
     elif text == '/how_to_trade':
+        add_message(user_id=user.id, text=text)
         update.message.reply_text(
             text=texts.how_to_trade_text,
             parse_mode='markdown',
         )
 
     elif text == '/author':
+        add_message(user_id=user.id, text=text)
         update.message.reply_text(
             text=texts.author_text,
             parse_mode='markdown'
         )
 
     elif text == '/brokers':
+        add_message(user_id=user.id, text=text)
         update.message.reply_text(
             text=texts.brokers_text,
         )
 
     elif text == '/order_types':
+        add_message(user_id=user.id, text=text)
         update.message.reply_text(
             text=texts.order_types_text,
+            parse_mode='markdown'
+        )
+
+    elif text == '/example':
+        add_message(user_id=user.id, text=text)
+        update.message.reply_photo(
+            caption=texts_for_images.text_for_example_image_RTS,
+            photo=open('example_image.png', 'rb'),
             parse_mode='markdown'
         )
 

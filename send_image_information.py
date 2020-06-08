@@ -6,6 +6,8 @@ from telegram.utils.request import Request
 import json
 import sys
 
+import texts_for_images
+
 TG_TOKEN = "1093939269:AAGzonjRzrCK1VAgGCEQxyV-Q_AMaiobAOM"
 
 with open(sys.argv[1], 'r') as f:
@@ -34,7 +36,9 @@ def main():
         bot.send_photo(
             chat_id=list_with_user_id[i],
             photo=open(sys.argv[2], 'rb'),
-            caption='Pretty_cool things we can do, but ЖИРНЫЙ ШРИФТ НЕ РАБОТАЕТ!!!!!',
+            caption=texts_for_images.text_for_image_RTS,
+            parse_mode='markdown'
+
         )
 
     print('sending is complete')
