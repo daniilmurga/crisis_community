@@ -17,7 +17,7 @@ from db import init_db
 import texts
 import texts_for_images
 
-TG_TOKEN = "1093939269:AAGzonjRzrCK1VAgGCEQxyV-Q_AMaiobAOM"
+TG_TOKEN = ""
 
 CALLBACK_BUTTON_1 = 'callback_button_1'
 CALLBACK_BUTTON_2 = 'callback_button_2'
