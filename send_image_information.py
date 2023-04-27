@@ -8,7 +8,7 @@ import sys
 
 import texts_for_images
 
-TG_TOKEN = "1093939269:AAGzonjRzrCK1VAgGCEQxyV-Q_AMaiobAOM"
+TG_TOKEN = ""
 
 with open(sys.argv[1], 'r') as f:
     list_with_user_id = json.loads(f.read())
